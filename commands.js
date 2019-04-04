@@ -1,5 +1,6 @@
 const { utils } = require("./utils");
 const commands = [
+    // Chat Commands
     {
         name: "objection",
         execute: function(message) {
@@ -29,7 +30,6 @@ const commands = [
         execute: function(message) {
             utils.postEmbed(message.channel, {
                 title: "Help",
-                color: 2573160,
                 fields: [
                     {
                         name: "Chat commands",
