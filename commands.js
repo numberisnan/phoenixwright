@@ -27,7 +27,16 @@ const commands = [
     {
         name: "help",
         execute: function(message) {
-            utils.postMessage(message.channel, "Help", "Image Commands: \npr!objection \npr!holdit \npr!oof \npr!takethat");
+            utils.postEmbed(message.channel, {
+                title: "Help",
+                color: 2573160,
+                fields: [
+                    {
+                        name: "Chat commands",
+                        value: "pr!oof\npr!takethat\npr!holdit\npr!objection"
+                    }
+                ]
+            });
         }
     }
 ];

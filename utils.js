@@ -13,6 +13,9 @@ const utils = {
                 }]
             }
         })
+    },
+    postEmbed: function(channelObj, embedObj) {
+        channelObj.send({embed: embedObj});
     }
 }
 
