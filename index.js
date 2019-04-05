@@ -11,7 +11,7 @@ client.on('ready', () => {
 client.on('message', message => {
     var args = message.content.split(prefix);
     if (args.length > 1) {
-        args.shift();
+        args[0] == "" && args.shift();
         console.log( args.join(",").replace(/ /g, ""));
         var currentCommand, commandName;
         for (var i = 0; i < args.length; i++) {

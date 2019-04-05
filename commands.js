@@ -34,9 +34,28 @@ const commands = [
                     {
                         name: "Chat commands",
                         value: "pr!oof\npr!takethat\npr!holdit\npr!objection"
+                    },
+                    {
+                        name: "Utilities",
+                        value: "pr!m - Execute multiple commands with no arguments e.g. pr!m oof takethat"
                     }
                 ]
             });
+        }
+    },
+    // Multiple commands command
+    {
+        name: "m",
+        execute: function(message, command) {
+            const args = command.split(" ").filter(arg => arg != "");
+            for (var i = 1; i < args.length; i++) {
+                currentCommand = args[i];
+                commands.forEach(function(v, i) {
+                    if (v.name == currentCommand) {
+                        v.execute(message, currentCommand);
+                    }
+                });
+            }
         }
     }
 ];
