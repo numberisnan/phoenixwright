@@ -57,6 +57,13 @@ const commands = [
                 });
             }
         }
+    },
+    // Test commands
+    {
+        name: "localImage",
+        execute: function(message) {
+            utils.postLocalImage(message.channel, "../.temp/test/download.png");
+        }
     }
 ];
 
