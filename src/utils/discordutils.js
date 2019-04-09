@@ -1,5 +1,5 @@
 const Discord = require("discord.js")
-const { color }  = require("./config.json")
+const { color }  = require("../../config.json")
 const utils = {
     postImage: function(channelObj, url) {
         const embed = new Discord.RichEmbed().setImage(url).setColor(color);
