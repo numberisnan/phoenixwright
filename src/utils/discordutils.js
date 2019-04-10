@@ -2,9 +2,14 @@ const Discord = require("discord.js");
 const { color }  = require("../../config.json");
 const path = require("path")
 const utils = {
-    postImage: function(channelObj, url) {
-        const embed = new Discord.RichEmbed().setImage(url).setColor(color);
-        channelObj.send({ embed })
+    postChatImage: function(message, command, url) {
+        const embed = new Discord.RichEmbed()
+        .setImage(url)
+        .setTitle(message.author.username + ": " + command.split(" ").slice(1).join(" ")) //Make comment in description field
+        .setThumbnail(message.author.displayAvatarURL)
+        .setColor(color);
+        message.delete(1000);
+        message.channel.send({ embed })
     },
     postLocalImage: function(channelObj, pathName) {
         const embed = new Discord.RichEmbed().attachFiles([pathName]).setImage("attachment://" + path.basename(pathName)).setColor(color);
