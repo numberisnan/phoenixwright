@@ -2,65 +2,46 @@ const { utils } = require("./utils/discordutils.js");
 const commands = [
     // Chat Commands
     {
-        name: "objection",
+        name: ["objection","obj"],
         execute: function(message, command) {
             utils.postChatImage(message, command, "https://i.kym-cdn.com/photos/images/newsfeed/000/171/527/objection-vector.png?1315394911");
         }
     },
     {
-        name: "takethat",
+        name: ["takethat","tt"],
         execute: function(message, command) {
-            utils.postChatImage(message, command, "http://www.shinmh.com/blog/octubre2012/phonixwrightDS/phoenix-wright-take-that-a.png");
+            utils.postChatImage(message, command, "https://vignette4.wikia.nocookie.net/aceattorney/images/b/be/TakeThat%21_HD.png/revision/latest?cb=20160415091349");
         }
     },
     {
-        name: "holdit",
+        name: ["holdit","hi"],
         execute: function(message, command) {
             utils.postChatImage(message, command, "https://vignette.wikia.nocookie.net/aceattorney/images/4/48/SoJ_Hold_it%21.png/revision/latest?cb=20160911003100");
         }
     },
     {
-        name: "oof",
+        name: ["oof"],
         execute: function(message, command) {
             utils.postChatImage(message, command, "https://media.giphy.com/media/IaxkRjESRHSLe/giphy.gif");
         }
     },
     {
-        name: "help",
+        name: ["help"],
         execute: function(message) {
             utils.postEmbed(message.channel, {
                 title: "Help",
                 fields: [
                     {
                         name: "Chat commands",
-                        value: "pr!oof\npr!takethat\npr!holdit\npr!objection"
-                    },
-                    {
-                        name: "Utilities",
-                        value: "pr!m - Execute multiple commands with no arguments e.g. pr!m oof takethat"
+                        value: "pr!oof\npr!takethat or pr!tt\npr!holdit or pr!hi\npr!objection or pr!obj"
                     }
                 ]
             });
         }
     },
-    // Multiple commands command
-    {
-        name: "m",
-        execute: function(message, command) {
-            const args = command.split(" ").filter(arg => arg != "");
-            for (var i = 1; i < args.length; i++) {
-                currentCommand = args[i];
-                commands.forEach(function(v, i) {
-                    if (v.name == currentCommand) {
-                        v.execute(message, currentCommand);
-                    }
-                });
-            }
-        }
-    },
     // Test commands
     {
-        name: "localImage",
+        name: ["localImage"],
         execute: function(message) {
             utils.postLocalImage(message.channel, "../.temp/test/download.png");
         }

@@ -12,18 +12,14 @@ client.on('message', message => {
     var args = message.content.split(prefix);
     if (args.length > 1) {
         args[0] == "" && args.shift();
-        console.log( args.join(",").replace(/ /g, ""));
-        var currentCommand, commandName;
-        for (var i = 0; i < args.length; i++) {
-            currentCommand = args[i];
-            commandName = currentCommand.split(" ")[0];
-            commands.forEach(function(v, i) {
-                if (v.name == commandName) {
-                    v.execute(message, currentCommand);
-                }
-            })
-        }
-
+        var command = args[0] //Full command
+        console.log(command);
+        var commandName = command.split(" ")[0];
+        commands.forEach(function(v, i) {
+            if (v.name.includes(commandName)) {
+                v.execute(message, command);
+            }
+        })
     }
 });
 

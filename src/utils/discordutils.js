@@ -5,10 +5,12 @@ const utils = {
     postChatImage: function(message, command, url) {
         const embed = new Discord.RichEmbed()
         .setImage(url)
-        .setTitle(message.author.username + ": " + command.split(" ").slice(1).join(" ")) //Make comment in description field
+        .setTitle(message.author.username) //Make comment in description field
+        .setDescription(command.split(" ").slice(1).join(" "))
         .setThumbnail(message.author.displayAvatarURL)
         .setColor(color);
-        message.delete(1000);
+        
+        message.delete();
         message.channel.send({ embed })
     },
     postLocalImage: function(channelObj, pathName) {
