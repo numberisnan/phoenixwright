@@ -1,37 +1,46 @@
 const Discord = require("discord.js");
 const { color }  = require("../../config.json");
-const path = require("path")
+const path = require("path");
 const utils = {
-    postChatImage: function(message, command, url) {
+    ChatEmbed: function(messageObj, {
+        chat="", url, anonymous=false
+    }) {
         const embed = new Discord.RichEmbed()
-        .setImage(url)
-        .setTitle(message.author.username) //Make comment in description field
-        .setDescription(command.split(" ").slice(1).join(" "))
-        .setThumbnail(message.author.displayAvatarURL)
-        .setColor(color);
+        .setDescription(chat || "")
+        .setColor(color || "WHITE");
+
+        if (!anonymous) {
+            embed
+                .setThumbnail(messageObj.author.displayAvatarURL)
+                .setTitle(messageObj.author.username)
+        }
+
+        if (url) {
+            embed.setImage(url);
+        }
         
-        message.delete();
-        message.channel.send({ embed })
+        return embed;
     },
-    postLocalImage: function(channelObj, pathName) {
-        const embed = new Discord.RichEmbed().attachFiles([pathName]).setImage("attachment://" + path.basename(pathName)).setColor(color);
-        channelObj.send({ embed });
-    },
-    postMessage: function(channelObj, title, md) {
-        channelObj.send({
+    postMessage: function(messageObj, title, chat) {
+        messageObj.send({
             embed: {
                 color: color,
                 fields: [{
                     name: title,
-                    value: md
+                    value: chat
                 }]
             }
         });
     },
-    postEmbed: function(channelObj, embedObj) {
+    postEmbed: function(messageObj, embedObj) {
+        messageObj.delete(1000);
         embedObj.color = color;
-        channelObj.send({embed: embedObj});
+        messageObj.channel.send({embed: embedObj});
+    },
+    attachLocalImage: function(embed, pathName) {
+        embed.attachFiles([pathName]).setImage("attachment://" + path.basename(pathName)).setColor(color);
+        return embed;
     }
-}
+};
 
 exports.utils = utils;

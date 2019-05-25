@@ -4,31 +4,31 @@ const commands = [
     {
         name: ["objection","obj"],
         execute: function(message, command) {
-            utils.postChatImage(message, command, "https://i.kym-cdn.com/photos/images/newsfeed/000/171/527/objection-vector.png?1315394911");
+            utils.postEmbed(message, utils.ChatEmbed(message, {chat: command.split(" ").slice(1).join(" "), url: "https://i.kym-cdn.com/photos/images/newsfeed/000/171/527/objection-vector.png?1315394911"}));
         }
     },
     {
         name: ["takethat","tt"],
         execute: function(message, command) {
-            utils.postChatImage(message, command, "https://vignette4.wikia.nocookie.net/aceattorney/images/b/be/TakeThat%21_HD.png/revision/latest?cb=20160415091349");
+            utils.postEmbed(message, utils.ChatEmbed(message, {chat: command.split(" ").slice(1).join(" "), url: "https://vignette4.wikia.nocookie.net/aceattorney/images/b/be/TakeThat%21_HD.png/revision/latest?cb=20160415091349"}));
         }
     },
     {
         name: ["holdit","hi"],
         execute: function(message, command) {
-            utils.postChatImage(message, command, "https://vignette.wikia.nocookie.net/aceattorney/images/4/48/SoJ_Hold_it%21.png/revision/latest?cb=20160911003100");
+            utils.postEmbed(message, utils.ChatEmbed(message, {chat: command.split(" ").slice(1).join(" "), url: "https://vignette.wikia.nocookie.net/aceattorney/images/4/48/SoJ_Hold_it%21.png/revision/latest?cb=20160911003100"}));
         }
     },
     {
         name: ["oof"],
         execute: function(message, command) {
-            utils.postChatImage(message, command, "https://media.giphy.com/media/IaxkRjESRHSLe/giphy.gif");
+            utils.postEmbed(message, utils.ChatEmbed(message, {chat: command.split(" ").slice(1).join(" "), url: "https://media.giphy.com/media/IaxkRjESRHSLe/giphy.gif"}));
         }
     },
     {
         name: ["help"],
         execute: function(message) {
-            utils.postEmbed(message.channel, {
+            utils.postEmbed(message, {
                 title: "Help",
                 fields: [
                     {
@@ -39,11 +39,10 @@ const commands = [
             });
         }
     },
-    // Test commands
     {
-        name: ["localImage"],
+        name: ["debate"],
         execute: function(message) {
-            utils.postLocalImage(message.channel, "../.temp/test/download.png");
+            utils.postEmbed(message, utils.attachLocalImage(utils.ChatEmbed(message, {anonymous: true}), "../assets/images/court.jpg"))
         }
     }
 ];

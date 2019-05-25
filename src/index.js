@@ -1,21 +1,21 @@
 const Discord = require('discord.js');
-const { prefix, token } = require('../config.json')
-const { commands } = require('./commands')
+const { prefix, token } = require('../config.json');
+const { commands } = require('./commands');
 
 const client = new Discord.Client();
 
 client.on('ready', () => {
-    console.log('ready');
+    console.log('Bot up and running!');
 });
 
 client.on('message', message => {
-    var args = message.content.split(prefix);
+    const args = message.content.split(prefix);
     if (args.length > 1) {
         args[0] == "" && args.shift();
-        var command = args[0] //Full command
+        const command = args[0]; //Full command
         console.log(command);
-        var commandName = command.split(" ")[0];
-        commands.forEach(function(v, i) {
+        const commandName = command.split(" ")[0];
+        commands.forEach(function(v) {
             if (v.name.includes(commandName)) {
                 v.execute(message, command);
             }
@@ -23,4 +23,7 @@ client.on('message', message => {
     }
 });
 
-client.login(token);
+client.login(token)
+    .catch(function(err) {
+        console.log("Error with logging in", err)
+    });
