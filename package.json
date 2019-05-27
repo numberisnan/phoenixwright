@@ -4,7 +4,6 @@
   "description": "A discord.js bot",
   "main": "index.js",
   "dependencies": {
-    "canvas": "^2.4.1",
     "discord.js": "^11.4.2"
   },
   "devDependencies": {},
