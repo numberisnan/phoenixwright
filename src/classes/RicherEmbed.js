@@ -3,9 +3,10 @@ const {basename} = require("path");
 const { color }  = require("../../config.json");
 
 class RicherEmbed extends RichEmbed {
-    constructor(embedObj) {
+    constructor(channelObj, embedObj) {
         super();
         this.color = color;
+        this.channel = channelObj;
 
         if (embedObj) {
             for (var prop in embedObj) { //Merge in all embed object props
@@ -20,14 +21,21 @@ class RicherEmbed extends RichEmbed {
         return this;
     };
 
-    attachLocalImage(pathName) {
+    setLocalThumbnail(pathName) {
+        this
+            .attachFiles([pathName])
+            .setThumbnail("attachment://" + basename(pathName));
+        return this;
+    };
+
+    setLocalImage(pathName) {
         this
             .attachFiles([pathName])
             .setImage("attachment://" + basename(pathName));
         return this;
     };
 
-    addContent(title, chat) {
+    setContent(title, chat) {
         this
             .setTitle(title)
             .setDescription(chat);
@@ -35,10 +43,14 @@ class RicherEmbed extends RichEmbed {
     };
 
     replace(messageToReplace) {
-        messageToReplace.channel.send({embed: this})
+        return messageToReplace.channel.send({embed: this})
             .then(res => messageToReplace.delete(1000))
             .catch(console.log);
     };
+
+    send() {
+        return this.channel.send({embed: this});
+    }
 
     chat(authorObj, command, url) {
         this.personalise(authorObj).setImage(url).setDescription(command.split(" ").slice(1).join(" "));
