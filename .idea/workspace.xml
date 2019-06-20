@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5ae91984-0243-44c7-92a8-88cfd34fc629" name="Default Changelist" comment="Add court image">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/RicherEmbed.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/RicherEmbed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/Debate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Debate.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/classes/Debate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="110" column="52" lean-forward="true" selection-start-line="110" selection-start-column="52" selection-end-line="110" selection-end-column="52" />
+            <state relative-caret-position="-442">
+              <caret line="48" column="27" lean-forward="true" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -54,13 +52,14 @@
         <option value="$PROJECT_DIR$/src/lib/debateUtils.js" />
         <option value="$PROJECT_DIR$/src/commands.js" />
         <option value="$PROJECT_DIR$/src/classes/RicherEmbed.js" />
+        <option value="$PROJECT_DIR$/config.json" />
         <option value="$PROJECT_DIR$/src/classes/Debate.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="220" />
-    <option name="y" value="-25" />
+    <option name="x" value="153" />
+    <option name="y" value="-19" />
     <option name="width" value="1750" />
     <option name="height" value="1030" />
   </component>
@@ -72,6 +71,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -105,7 +105,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -181,6 +180,8 @@
       <workItem from="1560813410165" duration="4813000" />
       <workItem from="1560876342536" duration="8834000" />
       <workItem from="1560962469970" duration="3407000" />
+      <workItem from="1560995703351" duration="2399000" />
+      <workItem from="1561050600561" duration="4247000" />
     </task>
     <task id="LOCAL-00001" summary="Add anonymous embed option, refactored embed arguments">
       <created>1558749346941</created>
@@ -200,7 +201,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65124000" />
+    <option name="totallyTimeSpent" value="71770000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -264,13 +265,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -353,10 +347,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/classes/Debate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="110" column="52" lean-forward="true" selection-start-line="110" selection-start-column="52" selection-end-line="110" selection-end-column="52" />
+        <state relative-caret-position="-442">
+          <caret line="48" column="27" lean-forward="true" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
         </state>
       </provider>
     </entry>

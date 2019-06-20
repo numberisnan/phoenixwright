@@ -12,6 +12,9 @@ class Debate {
         this.defender = defender;
         this.topic = topic;
 
+        this.prosecutor.credibility = config.maxCredibility;
+        this.defender.credibility = config.maxCredibility;
+
         this.Judge = new Judge(channelObj);
     }
 
@@ -43,13 +46,13 @@ class Debate {
             });
     }
     async start() {
-        this.Judge.speak("Prosecutor <@" + this.prosecutor.id + ">, please give the court your opening statement.\n(Send only one message)");
+        await this.Judge.speak("Prosecutor <@" + this.prosecutor.id + ">, please give the court your opening statement.\n(Send only one message)");
 
         await this.awaitMessage(this.prosecutor);
 
-        this.Judge.speak("Very well. You may call up a witness.\n(@mention someone to make them a witness.)");
+        while (this.prosecutor.credibility > 0 && this.defender.credibility > 0) {
+            await this.Judge.speak("Very well. You may call up a witness.\n(@mention someone to make them a witness.)");
 
-        for (var i = 1; i <= 1; i++) {
             // For each witness
             const witness = await this.awaitMessage(this.prosecutor);
             const witnessId = idFromMention(witness.content);
@@ -82,33 +85,61 @@ class Debate {
             }).send();
 
 
-            for (var j = 1; j <= 3; j++) {
-                console.log("Ask Question");
+            for (var j = 1; j <= config.crossExamination.questions; j++) {
                 await this.awaitMessage(this.defender);
 
                 const lastMessage = this.channel.lastMessage;
-                if (lastMessage.content === "objection") {
+                if (lastMessage.content.startsWith("objection")) {
                     await new RicherEmbed(lastMessage.channel)
                         .setImage("https://i.kym-cdn.com/photos/images/newsfeed/000/171/527/objection-vector.png?1315394911")
                         .send();
                     break;
                 } else {
                     await this.awaitMessage(witnessId); // Response to question
-                    await this.Judge.speak("You have " + (3-j) + " questions remaining.")
+                    await this.Judge.speak("You have " + (config.crossExamination.questions - j) + " questions remaining.")
                 }
             }
 
-            await this.Judge.speak("You have and objection? Please state the objection.");
+            await this.objection();
+        }
+    }
+    async objection() {
+        await this.Judge.speak("You have an objection? Please state the objection.");
 
-            var objection = await this.awaitMessage(this.defender);
+        var objection = await this.awaitMessage(this.defender);
 
-            await this.Judge.speak("What do you think, Ladies and Gentlemen of the Jury? Is this objection valid?\n(React with thumbs up or down to the objection)");
+        await this.Judge.speak("What do you think, Ladies and Gentlemen of the Jury? Is this objection valid?\n(React with thumbs up or down to the objection)");
 
-            var objectionResponse = await objection.awaitReactions(
-                reaction => ["👍","👎"].includes(reaction.emoji.name),
-                { time: 30 * 1000 });
+        var objectionResponse = await objection.awaitReactions(
+            reaction => ["👍","👎"].includes(reaction.emoji.name),
+            { time: 30 * 1000 });
 
-            console.log(objectionResponse.values());
+        if (
+            (function() {
+                var up = 0, down = 0;
+                for (var [key, value] of objectionResponse) {
+                    if (value._emoji.name === "👍") {
+                        up++;
+                    } else if (value._emoji.name === "👎") {
+                        down++;
+                    }
+                }
+                return up >= down;
+            })()
+        ) {
+            // Sustained
+            await this.Judge.speak("Objection sustained.\nProsecution, explain this.");
+            this.prosecutor.credibility--;
+            await this.show(this.prosecutor.username + " has " + this.prosecutor.credibility + " credibility left.", this.prosecutor.username + "'s Credibility", "../assets/images/credibility.png");
+
+            return true;
+        } else {
+            // Overruled
+            await this.Judge.speak("Objection overruled.");
+            this.defender.credibility--;
+            await this.show(this.defender.username + " has " + this.defender.credibility + " credibility left.", this.defender.username + "'s Credibility", "../assets/images/credibility.png");
+
+            return false;
         }
     }
     awaitReaction(message, reaction, user) {
