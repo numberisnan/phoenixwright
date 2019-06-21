@@ -57,6 +57,13 @@ class Debate {
             const witness = await this.awaitMessage(this.prosecutor);
             const witnessId = idFromMention(witness.content);
 
+            if (!witnessId) {
+                await this.Judge.speak("Could the prosecution name an actual witness next time?");
+                this.prosecutor.credibility--;
+                await this.displayCredibility(this.prosecutor);
+                continue;
+            }
+
             await this.Judge.speak(witness.cleanContent + ". Testify to court what you know about " + this.topic);
 
             await this.show(false, false, "../assets/images/testimony.gif");
@@ -65,12 +72,14 @@ class Debate {
 
             await this.Judge.speak("The defense may now cross examine the witness.\n(A DM was sent to you containing instructions)");
 
+            await this.show(false, false, "../assets/images/crossexamination.gif");
+
             // Send instructions
             if (!this.defender.dmChannel) {
                 await this.defender.createDM();
             }
 
-            this.defender.username !== "Number.isNaN" && new RicherEmbed(this.defender.dmChannel, { // TODO: Remove for production
+            this.defender.username !== "Number.isNaN" && new RicherEmbed(this.defender.dmChannel, { // TODO: Remove condition for production
                 title: "Cross Examinations",
                 fields: [
                     {
@@ -106,11 +115,11 @@ class Debate {
     async objection() {
         await this.Judge.speak("You have an objection? Please state the objection.");
 
-        var objection = await this.awaitMessage(this.defender);
+        const objection = await this.awaitMessage(this.defender);
 
         await this.Judge.speak("What do you think, Ladies and Gentlemen of the Jury? Is this objection valid?\n(React with thumbs up or down to the objection)");
 
-        var objectionResponse = await objection.awaitReactions(
+        const objectionResponse = await objection.awaitReactions(
             reaction => ["👍","👎"].includes(reaction.emoji.name),
             { time: 30 * 1000 });
 
@@ -128,17 +137,16 @@ class Debate {
             })()
         ) {
             // Sustained
-            await this.Judge.speak("Objection sustained.\nProsecution, explain this.");
+            await this.Judge.speak("Objection sustained.\nProsecution, I expect your case to be supported by your own witnesses!");
             this.prosecutor.credibility--;
-            await this.show(this.prosecutor.username + " has " + this.prosecutor.credibility + " credibility left.", this.prosecutor.username + "'s Credibility", "../assets/images/credibility.png");
+            this.displayCredibility(this.prosecutor);
 
             return true;
         } else {
             // Overruled
-            await this.Judge.speak("Objection overruled.");
+            await this.Judge.speak("Objection overruled. Perhaps the defense should think before raising an objection.");
             this.defender.credibility--;
-            await this.show(this.defender.username + " has " + this.defender.credibility + " credibility left.", this.defender.username + "'s Credibility", "../assets/images/credibility.png");
-
+            this.displayCredibility(this.defender);
             return false;
         }
     }
@@ -175,6 +183,9 @@ class Debate {
         title && embed.setTitle(title);
         image && (image.startsWith("http") ? embed.setImage(image) : embed.setLocalImage(image));
         return embed.send()
+    }
+    displayCredibility(user) {
+        return this.show(user.username + " has " + user.credibility + " credibility left.", user.username + "'s Credibility", "../assets/images/credibility.png");
     }
 }
 

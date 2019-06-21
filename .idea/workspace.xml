@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ae91984-0243-44c7-92a8-88cfd34fc629" name="Default Changelist" comment="Add court image">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/credibility.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/credibility.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/Debate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Debate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/debateUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/debateUtils.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,8 +20,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/classes/Debate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-442">
-              <caret line="48" column="27" lean-forward="true" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
+            <state relative-caret-position="-64">
+              <caret line="127" column="19" lean-forward="true" selection-start-line="127" selection-start-column="19" selection-end-line="127" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -49,17 +59,17 @@
         <option value="$PROJECT_DIR$/src/lib/reaction.js" />
         <option value="$PROJECT_DIR$/src/classes/Judge.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/lib/debateUtils.js" />
         <option value="$PROJECT_DIR$/src/commands.js" />
         <option value="$PROJECT_DIR$/src/classes/RicherEmbed.js" />
+        <option value="$PROJECT_DIR$/src/lib/debateUtils.js" />
         <option value="$PROJECT_DIR$/config.json" />
         <option value="$PROJECT_DIR$/src/classes/Debate.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="153" />
-    <option name="y" value="-19" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="152" />
+    <option name="y" value="-20" />
     <option name="width" value="1750" />
     <option name="height" value="1030" />
   </component>
@@ -100,6 +110,12 @@
               <item name="phoenixwright" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="phoenixwright" type="b2602c69:ProjectViewProjectNode" />
+              <item name="phoenixwright" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -182,6 +198,7 @@
       <workItem from="1560962469970" duration="3407000" />
       <workItem from="1560995703351" duration="2399000" />
       <workItem from="1561050600561" duration="4247000" />
+      <workItem from="1561060823003" duration="2718000" />
     </task>
     <task id="LOCAL-00001" summary="Add anonymous embed option, refactored embed arguments">
       <created>1558749346941</created>
@@ -201,7 +218,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71770000" />
+    <option name="totallyTimeSpent" value="74488000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -213,7 +230,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1488" height="878" extended-state="6" />
+    <frame x="-7" y="-7" width="1488" height="878" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.496" visible="true" weight="0.13232253" />
@@ -222,7 +239,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3297587" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32841823" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22788204" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994638" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -312,24 +329,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/debateUtils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="78" selection-start-line="9" selection-start-column="78" selection-end-line="9" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/classes/RicherEmbed.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="35" column="6" lean-forward="true" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/Judge.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -347,17 +350,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/debateUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="74" selection-start-line="9" selection-start-column="74" selection-end-line="9" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/Judge.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        <state relative-caret-position="68">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/classes/Debate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-442">
-          <caret line="48" column="27" lean-forward="true" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
+        <state relative-caret-position="-64">
+          <caret line="127" column="19" lean-forward="true" selection-start-line="127" selection-start-column="19" selection-end-line="127" selection-end-column="19" />
         </state>
       </provider>
     </entry>
