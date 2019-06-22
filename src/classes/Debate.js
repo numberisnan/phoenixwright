@@ -111,6 +111,15 @@ class Debate {
 
             await this.objection();
         }
+        // Game end
+        this.Judge.speak("I have seen enough. This Court's verdict for the prosecution's claims about " + this.topic + " is...");
+
+        if (this.prosecutor.credibility === 0) {
+            this.show(false, false, "../assets/images/notguilty.gif");
+        } else {
+            this.show(false, false, "../assets/images/guilty.gif");
+        }
+
     }
     async objection() {
         await this.Judge.speak("You have an objection? Please state the objection.");

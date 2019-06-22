@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ae91984-0243-44c7-92a8-88cfd34fc629" name="Default Changelist" comment="Add court image">
-      <change beforePath="$PROJECT_DIR$/assets/images/credibility.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/credibility.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/Debate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Debate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/debateUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/debateUtils.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/classes/Debate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-64">
-              <caret line="127" column="19" lean-forward="true" selection-start-line="127" selection-start-column="19" selection-end-line="127" selection-end-column="19" />
+            <state relative-caret-position="378">
+              <caret line="114" column="93" selection-start-line="114" selection-start-column="93" selection-end-line="114" selection-end-column="93" />
             </state>
           </provider>
         </entry>
@@ -67,7 +66,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="152" />
     <option name="y" value="-20" />
     <option name="width" value="1750" />
@@ -198,7 +197,7 @@
       <workItem from="1560962469970" duration="3407000" />
       <workItem from="1560995703351" duration="2399000" />
       <workItem from="1561050600561" duration="4247000" />
-      <workItem from="1561060823003" duration="2718000" />
+      <workItem from="1561060823003" duration="3192000" />
     </task>
     <task id="LOCAL-00001" summary="Add anonymous embed option, refactored embed arguments">
       <created>1558749346941</created>
@@ -218,7 +217,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74488000" />
+    <option name="totallyTimeSpent" value="74962000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -230,7 +229,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1488" height="878" extended-state="7" />
+    <frame x="-7" y="-7" width="1488" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.496" visible="true" weight="0.13232253" />
@@ -239,7 +238,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3297587" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22788204" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22788204" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994638" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -373,8 +372,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/classes/Debate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-64">
-          <caret line="127" column="19" lean-forward="true" selection-start-line="127" selection-start-column="19" selection-end-line="127" selection-end-column="19" />
+        <state relative-caret-position="378">
+          <caret line="114" column="93" selection-start-line="114" selection-start-column="93" selection-end-line="114" selection-end-column="93" />
         </state>
       </provider>
     </entry>
