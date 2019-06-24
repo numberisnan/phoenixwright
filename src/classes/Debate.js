@@ -177,7 +177,7 @@ class Debate {
         const self = this;
         return new Promise(function(resolve) {
             self.client.on("message", function checkForMessage(message) {
-                if (((typeof message.valueOf() === "object" && (message.author.id === user.id || user === "any")) || message.author.id === user) && !message.content.startsWith(config.prefix)) {
+                if (((typeof message.valueOf() === "object" && (message.author.id === user.id || user === "any")) || message.author.id === user) && !message.content.startsWith(config.prefix) && message.channel === self.channel) {
                     // Success
                     self.client.removeListener("message", checkForMessage);
                     resolve(message);
