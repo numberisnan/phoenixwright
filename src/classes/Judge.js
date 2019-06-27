@@ -1,10 +1,11 @@
-const { RicherEmbed } = require("./RicherEmbed");
+const {RicherEmbed} = require("../../../richer-embed/index");
 
 class Judge {
     constructor(channelObj) {
         this.channel = channelObj;
     }
-    speak(text, options={}) {
+
+    speak(text, options = {}) {
         const embed = new RicherEmbed(this.channel);
 
         if (options.image) {

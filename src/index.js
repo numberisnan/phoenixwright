@@ -1,5 +1,5 @@
-const { commands } = require('./commands');
-const { prefix, token } = require('../config.json');
+const {commands} = require('./commands');
+const {prefix, token} = require('../config.json');
 const Discord = require('discord.js');
 
 const client = new Discord.Client();
@@ -8,7 +8,7 @@ client.login(token)
     .then(() => {
         console.log("Logged in")
     })
-    .catch(function(err) {
+    .catch(function (err) {
         console.log("Error with logging in", err)
     });
 
@@ -23,7 +23,7 @@ client.on('message', message => {
         const command = args[0]; //Full command
         console.log(command);
         const commandName = command.split(" ")[0];
-        commands.forEach(function(v) {
+        commands.forEach(function (v) {
             if (v.name.includes(commandName)) {
                 v.execute(message, command, client);
             }

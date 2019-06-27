@@ -1,8 +1,8 @@
 const dicord = require("discord.js");
 const config = require("../../config");
-const { Judge } = require("./Judge");
-const { RicherEmbed }  = require("./RicherEmbed");
-const { setTimeoutAsync, idFromMention } = require("../lib/debateUtils");
+const {Judge} = require("./Judge");
+const {RicherEmbed} = require("../../../richer-embed/index");
+const {setTimeoutAsync, idFromMention} = require("../lib/debateUtils");
 
 class Debate {
     constructor({client, channelObj, prosecutor, defender, topic}) {
@@ -35,7 +35,7 @@ class Debate {
             ]),
             setTimeoutAsync(1000 * 30)
         ])
-            .then(async function(data) {
+            .then(async function (data) {
                 if (data) {
                     // Reactions!
                     await self.start();
@@ -45,6 +45,7 @@ class Debate {
                 }
             });
     }
+
     async start() {
         await this.Judge.speak("Prosecutor <@" + this.prosecutor.id + ">, please give the court your opening statement.\n(Send only one message)");
 
@@ -121,6 +122,7 @@ class Debate {
         }
 
     }
+
     async objection() {
         await this.Judge.speak("You have an objection? Please state the objection.");
 
@@ -129,11 +131,11 @@ class Debate {
         await this.Judge.speak("What do you think, Ladies and Gentlemen of the Jury? Is this objection valid?\n(React with thumbs up or down to the objection)");
 
         const objectionResponse = await objection.awaitReactions(
-            reaction => ["👍","👎"].includes(reaction.emoji.name),
-            { time: 30 * 1000 });
+            reaction => ["👍", "👎"].includes(reaction.emoji.name),
+            {time: 30 * 1000});
 
         if (
-            (function() {
+            (function () {
                 var up = 0, down = 0;
                 for (var [key, value] of objectionResponse) {
                     if (value._emoji.name === "👍") {
@@ -159,6 +161,7 @@ class Debate {
             return false;
         }
     }
+
     awaitReaction(message, reaction, user) {
         const self = this;
         return new Promise(function (resolve) {
@@ -173,9 +176,10 @@ class Debate {
             });
         });
     };
+
     awaitMessage(user) {
         const self = this;
-        return new Promise(function(resolve) {
+        return new Promise(function (resolve) {
             self.client.on("message", function checkForMessage(message) {
                 if (((typeof message.valueOf() === "object" && (message.author.id === user.id || user === "any")) || message.author.id === user) && !message.content.startsWith(config.prefix) && message.channel === self.channel) {
                     // Success
@@ -186,6 +190,7 @@ class Debate {
             })
         })
     }
+
     show(text, title, image) {
         const embed = new RicherEmbed(this.channel);
         text && embed.setDescription(text);
@@ -193,6 +198,7 @@ class Debate {
         image && (image.startsWith("http") ? embed.setImage(image) : embed.setLocalImage(image));
         return embed.send()
     }
+
     displayCredibility(user) {
         return this.show(user.username + " has " + user.credibility + " credibility left.", user.username + "'s Credibility", "../assets/images/credibility.png");
     }
