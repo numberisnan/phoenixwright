@@ -20,7 +20,7 @@ class Debate {
 
     async init() {
         const self = this;
-        await new RicherEmbed(this.channel)
+        await new RicherEmbed(this.channel, { color: config.color })
             .setLocalImage("../assets/images/court.jpg")
             .setTitle("*Murmuring*")
             .send();
@@ -192,7 +192,7 @@ class Debate {
     }
 
     show(text, title, image) {
-        const embed = new RicherEmbed(this.channel);
+        const embed = new RicherEmbed(this.channel, { color: config.color });
         text && embed.setDescription(text);
         title && embed.setTitle(title);
         image && (image.startsWith("http") ? embed.setImage(image) : embed.setLocalImage(image));
