@@ -64,6 +64,12 @@ const commands = [
 
             await debate.init();
         }
+    },
+    {
+        name: ["rey"],
+        execute: function (message, command) {
+            new RicherEmbed(message.channel, { color }).chat(message.author, command, "https://cdn.discordapp.com/attachments/540896409780617237/651548856026136596/unknown.png").replace(message);
+        }
     }
 ];
 
