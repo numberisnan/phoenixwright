@@ -1,4 +1,4 @@
-# pheonix-wright
+# pheonixwright
 This is a Discord chat bot I built after playing the first game of the Ace Attorney Series! This bot preforms simple bots tasks such as posting iages and gifs, but also has the complicated task of managing a debate/course case on a Discord Server!
 
 ## Commands
