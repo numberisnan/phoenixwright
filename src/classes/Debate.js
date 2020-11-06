@@ -1,7 +1,7 @@
 const dicord = require("discord.js");
 const config = require("../../config");
 const {Judge} = require("./Judge");
-const {RicherEmbed} = require("../../../richer-embed/index");
+const {RicherEmbed} = require("richer-embed");
 const {setTimeoutAsync, idFromMention} = require("../lib/debateUtils");
 
 class Debate {

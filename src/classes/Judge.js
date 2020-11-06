@@ -1,4 +1,4 @@
-const {RicherEmbed} = require("../../../richer-embed/index");
+const {RicherEmbed} = require("richer-embed");
 
 class Judge {
     constructor(channelObj) {

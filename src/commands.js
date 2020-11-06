@@ -1,4 +1,4 @@
-const {RicherEmbed} = require("../../richer-embed/index");
+const {RicherEmbed} = require("richer-embed");
 const {Debate} = require("./classes/Debate");
 const { color } = require("../config");
 

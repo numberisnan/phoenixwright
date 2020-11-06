@@ -4,7 +4,8 @@
   "description": "A discord.js bot",
   "main": "index.js",
   "dependencies": {
-    "discord.js": "^11.4.2"
+    "discord.js": "^11.4.2",
+    "richer-embed": "1.0.3"
   },
   "devDependencies": {},
   "scripts": {
