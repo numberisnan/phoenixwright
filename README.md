@@ -20,5 +20,6 @@ debate @defender topic | Debate another mentioned user on a given topic. Simply 
     color: 0x000000
 }
 ```
-Remeber that you need to add your bot to a server first before the next step.
+Remember that you need to add your bot to a server first before the next step.
+
 3. Run either of the ```run.bat```s. The bot should mow be good to go!
